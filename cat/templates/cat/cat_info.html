@@ -1,0 +1,46 @@
+{% extends 'cat/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="cat-layout">
+    <div class="avatar-panel">
+        <img src="{% static avatar %}" alt="Фото кота {{ cat.name }}" class="cat-avatar">
+        <span class="mood-badge">{{ mood }}</span>
+    </div>
+
+    <div class="info-panel">
+        <div class="cat-header">
+            <p class="eyebrow">Ваш кот</p>
+            <h1>{{ cat.name }}</h1>
+        </div>
+
+        <dl class="stats">
+            <div>
+                <dt>Возраст</dt>
+                <dd>{{ cat.age }} год</dd>
+            </div>
+            <div>
+                <dt>Сытость</dt>
+                <dd>{{ cat.fullness }} / 100</dd>
+            </div>
+            <div>
+                <dt>Счастье</dt>
+                <dd>{{ cat.happiness }} / 100</dd>
+            </div>
+        </dl>
+
+        <form class="action-form" method="post">
+            {% csrf_token %}
+            <label for="action">Действие с котом</label>
+            <div class="action-row">
+                <select id="action" name="action">
+                    <option value="feed">Покормить</option>
+                    <option value="play">Поиграть</option>
+                    <option value="sleep">Уложить спать</option>
+                </select>
+                <button type="submit">Подтвердить</button>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}

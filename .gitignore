@@ -1,0 +1,51 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+
+# --- Django ---
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+static_root/
+
+# --- Переменные окружения (Секреты) ---
+.env
+.env.[a-zA-Z]*
+!.env.example
+
+# --- IDE / Редакторы кода ---
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.swo
+
+# --- Логи и отчеты ---
+*.log
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.deprecated
+.pytest_cache/
+
+# --- Системные файлы ---
+.DS_Store
+Thumbs.db

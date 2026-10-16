@@ -1,0 +1,17 @@
+{% extends 'cat/base.html' %}
+
+{% block content %}
+<section class="welcome-panel">
+    <div class="welcome-copy">
+        <p class="eyebrow">Вас приветствует симулятор кота</p>
+        <h1>Для начала введите имя кота</h1>
+    </div>
+
+    <form class="cat-form" method="post">
+        {% csrf_token %}
+        <label for="name">Имя кота</label>
+        <input id="name" name="name" type="text" placeholder="введите имя кота" required autofocus>
+        <button type="submit">Создать</button>
+    </form>
+</section>
+{% endblock %}
